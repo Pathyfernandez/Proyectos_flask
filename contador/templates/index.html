@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador de Visitas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>Contador de Visitas</h1>
+    <p>Número de veces que has visitado este sitio: {{ counter }}</p>
+    <form action="/increment" method="post">
+        <button class="btn btn-warning" type="submit">+2</button>
+    </form>
+    <form action="/reset" method="post">
+        <button class="btn btn-warning" type="submit">Reiniciar</button>
+    </form>
+    <form action="/custom_increment" method="post">
+        <input type="number" name="increment" placeholder="Incremento personalizado">
+        <button class="btn btn-warning" type="submit">Incrementar</button>
+    </form>
+    <form action="/destroy_session" method="post">
+        <button class="btn btn-warning"  type="submit">Eliminar Sesión</button>
+    </form>
+</div>
+</body>
+</html>
