@@ -1,0 +1,16 @@
+
+
+.result {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.green {
+    color: green;
+}
+.blue {
+    color: blue;
+}
+.red {
+    color: red;
+}
