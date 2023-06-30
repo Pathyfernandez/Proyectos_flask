@@ -7,17 +7,19 @@ app.secret_key = 'mysecretkey'
 def index():
     if request.method == 'POST':
         session['name'] = request.form['name']
-        session['gender'] = request.form['gender']
-        session['interests'] = request.form.getlist('interests')
+        session['dojo_location'] = request.form['dojo_location']
+        session['favorite_language'] = request.form['favorite_language']
+        session['comment'] = request.form['comment']
         return redirect(url_for('result'))
     return render_template('index.html')
 
 @app.route('/result')
 def result():
     name = session.get('name')
-    gender = session.get('gender')
-    interests = session.get('interests')
-    return render_template('result.html', name=name, gender=gender, interests=interests)
+    country = session.get('dojo_location')
+    favorite_language = session.get('favorite_language')
+    comment = session.get('comment')
+    return render_template('result.html', name=name, dojo_location=country, favorite_language=favorite_language, comment=comment)
 
 if __name__ == '__main__':
     app.run(debug=True)
