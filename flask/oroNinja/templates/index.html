@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oro Ninja</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Oro Ninja</h1>
+
+        <p class="mt-auto, text-center">Gold: <strong>{{ gold }}</strong></p>
+
+        <div class="row justify-content-center justify-content-md-start mx-auto">
+        <div class="border border-warning mt-auto">
+            <h3>FARM</h3>
+            <p>(+10-20 gold)</p>
+        
+        <form action="/process_money" method="post">
+            <input type="hidden" name="building" value="farm" />
+            <button type="submit" class="btn btn-warning">Find Gold!</button>
+        </form>
+    </div>
+    <div class="border border-warning mt-auto">
+        <h3>CAVE</h3>
+        <p>(+5-10 gold)</p>
+        <form action="/process_money" method="post">
+            <input type="hidden" name="building" value="cave" />
+            <button type="submit" class="btn btn-primary">Find Gold!</button>
+        </form>
+    </div>
+    <div class="border border-warning">
+        <h3>HAUSE</h3>
+        <p>(+2-5 gold)</p>
+        <form action="/process_money" method="post">
+            <input type="hidden" name="building" value="house" />
+            <button type="submit" class="btn btn-danger">Find Gold!</button>
+        </form>
+        </div>
+        <div class="border border-warning">
+            <h3>CASINO</h3>
+            <p>(-50-50 gold)</p>
+        <form action="/process_money" method="post">
+            <input type="hidden" name="building" value="casino" />
+            <button type="submit" class="btn btn-success">Find Gold!</button>
+        </form>
+        </div>
+        </div>
+
+        <h2 class="mt-4">Activities:</h2>
+        <ul id="activities" class="list-group">
+            {% for activity in activities %}
+                <li class="list-group-item activity bg-{{ activity['color'] }}">{{ activity['activity'] }}</li>
+            {% endfor %}
+        </ul>
+        {% if activities %}
+            <a href="/" class="btn btn-secondary mt-4">Restart</a>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
