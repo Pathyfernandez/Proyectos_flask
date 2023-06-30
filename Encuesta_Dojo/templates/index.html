@@ -3,10 +3,8 @@
 <head>
     <title>Formulario</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    
 </head>
 <body>
-    <div class="container">
     <h1>Formulario</h1>
     <form method="POST" action="/">
         <div class="form-group">
@@ -14,21 +12,29 @@
             <input type="text" id="name" name="name" required>
         </div>
         <div class="form-group">
-            <label>Género:</label>
-            <label><input type="radio" name="gender" value="masculino"> Masculino</label>
-            <label><input type="radio" name="gender" value="femenino"> Femenino</label>
+            <label>Locacion del Dojo:</label>
+            <select name="dojo_location">
+                <option value="Chile">Chile</option>
+                <option value="Argentina">Argentina</option>
+                <option value="México">México</option>
+            </select>
         </div>
         <div class="form-group">
-            <label>Intereses:</label>
-            <label><input type="checkbox" name="interests" value="deportes"> Deportes</label>
-            <label><input type="checkbox" name="interests" value="arte"> Arte</label>
-            <label><input type="checkbox" name="interests" value="música"> Música</label>
+            <label>Lenguaje Favorito:</label>
+            <select name="favorite_language">
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Comentario Adicional:</label>
+            <textarea name="comment"></textarea>
         </div>
         <div class="form-group">
             <button type="submit">Enviar</button>
         </div>
     </form>
-
-</div>
 </body>
 </html>

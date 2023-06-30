@@ -3,13 +3,14 @@
 <head>
     <title>Resultados</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    
+</head>
 <body>
     <h1>Resultados</h1>
     <div class="result">
         <p><strong>Nombre:</strong> {{ name }}</p>
-        <p><strong>Género:</strong> {{ gender }}</p>
-        <p><strong>Intereses:</strong> {{ interests|join(', ') }}</p>
+        <p><strong>País:</strong> {{ dojo_location }}</p>
+        <p><strong>Lenguaje Favorito:</strong> {{ favorite_language }}</p>
+        <p><strong>Comentario Adicional:</strong> {{ comment }}</p>
     </div>
 </body>
 </html>
